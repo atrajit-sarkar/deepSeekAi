@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Bungee+Tint&family=Kode+Mono:wght@400..700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* font-family: "Kode Mono", monospace; */
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 24px;
+    font-style: normal;
+    background: linear-gradient(135deg, #1b2b34, #343d46);
+    color: #c0c5ce;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    gap: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    /* Make the title sticky */
+    top: 0;
+    /* Sets the top position when sticky */
+    background: linear-gradient(180deg, #1f2225, #182734);
+    transition: background-color 0.3s ease;
+    /* Background color */
+    width: 100%;
+    /* Full width */
+    text-align: center;
+    /* Center text */
+    z-index: 1000;
+    /* Ensure it appears above other content */
+    height: 69px;
+    /* Fixed height */
+}
+
+.title p {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 7px;
+    /* Padding on top */
+    animation: glow 1.5s infinite alternate;
+    transition: font-size 0.3s ease;
+    font-size: 40px;
+    color: #a7adba;
+}
+
+#themes {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Space between labels and dropdowns */
+    position: absolute;
+    right: 2rem;
+    /* Adjust distance from the right edge of the header */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#themes label {
+    font-size: 0.9rem;
+    /* Slightly smaller for modern aesthetics */
+    color: #c0c5ce;
+    /* Matches the header text color */
+    font-weight: 500;
+    /* Adds some weight for prominence */
+}
+
+#themes select {
+    background-color: #2b303b;
+    /* Dark background for dropdown */
+    color: #c0c5ce;
+    /* White text for contrast */
+    border: 1px solid #4f5b66;
+    /* Subtle border to separate dropdown */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 0.4rem 0.8rem;
+    /* Comfortable padding for interaction */
+    font-size: 0.9rem;
+    /* Matches label size */
+    cursor: pointer;
+    transition: all 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    /* Smooth hover animation */
+}
+
+#themes select:hover {
+    background-color: #343d46;
+    /* Slightly lighter background on hover */
+    border-color: #65737e;
+    /* Subtle color change on hover */
+}
+
+#themes select:focus {
+    outline: none;
+    /* Removes default outline */
+    box-shadow: 0 0 4px #a7adba;
+    /* Subtle focus ring for accessibility */
+    border-color: #a7adba;
+    /* Highlights border on focus */
+}
+
+#fonts {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    /* Space between labels and dropdowns */
+    position: absolute;
+    left: 2rem;
+    /* Adjust distance from the right edge of the header */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#fonts label {
+    font-size: 0.9rem;
+    /* Slightly smaller for modern aesthetics */
+    color: #fff;
+    /* Matches the header text color */
+    font-weight: 500;
+    /* Adds some weight for prominence */
+}
+
+#fonts select {
+    background-color: #2b2b2b;
+    /* Dark background for dropdown */
+    color: #fff;
+    /* White text for contrast */
+    border: 1px solid #444;
+    /* Subtle border to separate dropdown */
+    border-radius: 4px;
+    /* Rounded corners */
+    padding: 0.4rem 0.8rem;
+    /* Comfortable padding for interaction */
+    font-size: 0.9rem;
+    /* Matches label size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Smooth hover animation */
+}
+
+#fonts select:hover {
+    background-color: #3c3c3c;
+    /* Slightly lighter background on hover */
+    border-color: #666;
+    /* Subtle color change on hover */
+}
+
+#fonts select:focus {
+    outline: none;
+    /* Removes default outline */
+    box-shadow: 0 0 4px #aaa;
+    /* Subtle focus ring for accessibility */
+    border-color: #888;
+    /* Highlights border on focus */
+}
+.note {
+    color: #bf616a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+mjx-container[display="true"] {
+    text-align: center;
+    display: block;
+    margin: 20px 0;
+    /* Adjust spacing around equations */
+    word-wrap: break-word;
+    /* Force long equations to wrap */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #2b303b;
+    border: 1px solid #4f5b66;
+}
+
+
+/* Math Equations */
+/* Equation Styling for Dark Theme */
+mjx-container[display="true"] {
+    display: block;
+    /* text-align: left; */
+    margin: 20px 0;
+    /* font-size: 1.4em; */
+    color: #c0c5ce;
+    /* Light text for dark background */
+    padding: 12px;
+    background-color: #343d46;
+    /* Dark background */
+    border-radius: 8px;
+    border: 1px solid #4f5b66;
+    /* Subtle border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+    overflow-x: auto;
+    white-space: nowrap;
+    /* Prevent content from wrapping */
+    position: relative;
+    /* Position relative for absolute elements */
+
+}
+
+
+mjx-container[display="true"]::-webkit-scrollbar {
+    height: 6px;
+    /* Height of the scrollbar */
+    background: transparent;
+    /* Initial background is transparent */
+    opacity: 0;
+    /* Initially not visible */
+    transition: opacity 0.3s ease;
+    /* Smooth transition */
+}
+
+mjx-container[display="true"]::-webkit-scrollbar-thumb {
+    background: #65737e;
+    /* Scrollbar color */
+    border-radius: 4px;
+    /* Rounded scrollbar */
+    transition: background-color 0.3s ease;
+    /* Smooth transition */
+}
+
+mjx-container[display="true"]::-webkit-scrollbar-thumb:hover {
+    background: #a7adba;
+    /* Lighter color on hover */
+}
+
+mjx-container[display="true"]::-webkit-scrollbar-track {
+    background: transparent;
+    /* Track remains transparent */
+}
+
+/* Fade-in and fade-out scrollbar animation */
+mjx-container[display="true"] {
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #65737e transparent;
+    /* Thumb and track color */
+    animation: fadeOutScrollbar 2s ease-in 3s forwards;
+    /* Initially fade out */
+}
+
+mjx-container[display="true"]:hover::-webkit-scrollbar,
+mjx-container[display="true"]:active::-webkit-scrollbar {
+    opacity: 1; /* Show scrollbar on hover or active scroll */
+}
+
+
+@keyframes fadeInScrollbar {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutScrollbar {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+/* Specific Equation Block */
+mjx-container[display="true"] {
+    background-color: #4f5b66;
+    /* Slightly different background for the equation block */
+    padding: 15px;
+    border: 1px solid #343d46;
+    /* Darker border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Consistent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+mjx-container[display="true"]:hover,
+mjx-container[display="true"]:hover {
+    transform: translateY(-5px);
+    /* Subtle lift effect */
+    box-shadow: 0 8px 16px rgba(96, 96, 96, 0.867);
+    /* Increased shadow on hover */
+    background-color: #65737e;
+    /* Slight color change on hover */
+}
+
+/* Animation on Page Load */
+mjx-container[display="true"] {
+    opacity: 0;
+    animation: fadeIn 0.8s forwards;
+    /* Fade in effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        /* Start with a slight upward shift */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Settle in its original position */
+    }
+}
+
+/* mjx-container[jax="SVG"] {
+    overflow: visible !important;
+} */
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+
+    body {
+        width: fit-content;
+    }
+
+    /* Adjust as needed for your breakpoint */
+    .title {
+        font-size: 28px;
+        /* Smaller font size for mobile */
+        height: 50px;
+        /* Adjust height for mobile */
+        padding-top: 5px;
+        /* Adjust padding for mobile */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+.title p:hover {
+    animation: zoom-in 0.5s ease-in-out;
+    /* animation: glow 1.5s infinite alternate; */
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        /* Start and end at original position */
+    }
+
+    40% {
+        transform: translateY(-30px);
+        /* Move up */
+    }
+
+    60% {
+        transform: translateY(-15px);
+        /* Move down */
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0.8);
+        /* Start slightly smaller */
+        opacity: 0;
+        /* Start fully transparent */
+    }
+
+    100% {
+        transform: scale(1);
+        /* End at original size */
+        opacity: 1;
+        /* End fully opaque */
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+        /* Start and end at original position */
+    }
+
+    10% {
+        transform: translateX(-10px);
+        /* Move left */
+    }
+
+    20% {
+        transform: translateX(10px);
+        /* Move right */
+    }
+
+    30% {
+        transform: translateX(-5px);
+        /* Move left again */
+    }
+
+    40% {
+        transform: translateX(5px);
+        /* Move right again */
+    }
+
+    50% {
+        transform: translateX(0);
+        /* Back to center */
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 15px #fff;
+        /* Initial glow */
+    }
+
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 30px #fff, 0 0 20px #fff, 0 0 25px #fff;
+        /* Final glow */
+    }
+}
+
+.container {
+    width: 1218px;
+    /* background-color: #3e3e3f; */
+}
+
+.content {
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50, #1a1a1a, #030e35, #02382d);
+    color: aliceblue;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* overflow-x: hidden; */
+    /* Ensure content wraps instead of overflowing */
+    word-wrap: break-word;
+    /* Break long words */
+    overflow-wrap: break-word;
+    /* Safeguard for word breaks */
+    white-space: normal;
+    /* Allow text and elements to wrap */
+
+    overflow-x: hidden;
+}
+
+p {
+    line-height: 2.0;
+    word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    transition: background-color 0.4s ease-in-out, color 0.3s ease;
+}
+
+h1 {
+    color: #bf616a;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+h2 {
+    color: #d08770;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+h3 {
+    color: #ebcb8b;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h3:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+h4 {
+    color: #a3be8c;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h4:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+h5 {
+    color: #b48ead;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h5:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+h6 {
+    color: #96b5b4;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h6:hover {
+    background-color: #37419c;
+    padding: 7px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    /* width: fit-content; */
+}
+
+strong {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #c0c5ce;
+}
+
+strong:hover {
+    background-color: #547b98;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+pre {
+    display: flex;
+    background-color: #2b303b !important;
+    color: #c0c5ce !important;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 2rem;
+    /* max-height: 400px; */
+    overflow: auto;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+pre:hover {
+    animation: shake 0.5s ease-in-out;
+    transition: animation 0.3s ease;
+}
+
+code {
+    font-size: 1rem;
+    /* Increase the size for better visibility */
+    line-height: 1.5;
+    white-space: pre-wrap;
+    /* Ensure long lines wrap */
+    word-wrap: break-word;
+    /* Handle long words properly */
+    color: #c0c5ce;
+}
+
+/* Styles for inline code */
+code:not([class*="language-"]) {
+    background-color: #343d46;
+    color: #c0c5ce;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 24px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.copy-button {
+    height: fit-content;
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    color: #c0c5ce;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    /* align-items: center; */
+    z-index: 1;
+    /* Ensure it stays above the content of the pre block */
+    pointer-events: auto;
+    /* Ensure the button is clickable */
+
+}
+
+.copy-button i {
+    pointer-events: none;
+    /* Prevent clicking on the icon */
+}
+
+.copy-button:active {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.copied::after {
+    content: "Copied!";
+    font-size: 0.9rem;
+    color: #a3be8c;
+    position: absolute;
+    right: 40px;
+    top: 3px;
+    opacity: 1;
+    animation: fadeout 2.3s forwards;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Media query for devices with a max-width of 768px */
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+        padding: 7px;
+        /* Add padding for smaller screens */
+        font-size: 16px;
+        /* Reduce font size for readability */
+        /* zoom: 1.2; */
+        /* Increase zoom level for better visibility */
+    }
+
+    .title {
+        font-size: 18px;
+        /* Smaller font size for mobile */
+        height: auto;
+        /* Adjust height to be flexible */
+        padding: 7px 0;
+        /* Adjust padding for mobile */
+    }
+
+    .container {
+        width: 100%;
+        padding: 8px;
+        /* Make container responsive */
+    }
+
+    .content {
+        padding: 10px;
+        /* Reduce padding on mobile */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.2rem;
+        /* Make headings smaller */
+    }
+
+    pre {
+        max-width: 100%;
+        /* Ensure code blocks don't overflow */
+        overflow-x: auto;
+        /* Allow horizontal scrolling if necessary */
+        font-size: 7px;
+        /* Smaller font size for code */
+        transition: font-size 0.3s ease;
+    }
+
+    code:not([class*="language-"]) {
+        font-size: 16px;
+    }
+
+    .copy-button {
+        top: 5px;
+        right: 5px;
+        font-size: 1rem;
+        /* Adjust size of copy button */
+    }
+}
+
+/* Media query for very small devices (up to 480px) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 24px;
+        padding: 8px 0;
+        /* Adjust for very small screens */
+    }
+
+    .content {
+        font-size: 10px;
+        /* Reduce font size in content */
+        transition: font-size 0.3s ease;
+    }
+}
+
+/* make styling animations and higlighting more smoother and beautiful if possible while keeping the original features and styling same just improve the existing styling */
