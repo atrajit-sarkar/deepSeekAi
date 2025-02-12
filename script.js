@@ -1,5 +1,5 @@
 const apiUrl = "https://openrouter.ai/api/v1/chat/completions";
-const apiKey = "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"; // Replace with your OpenRouter API key
+const apiKey = "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"; // Replace with your OpenRouter API key
 const chatBox = document.getElementById("chat-box");
 const chatInput = document.getElementById("chat-input");
 const sendButton = document.getElementById("send-button");
